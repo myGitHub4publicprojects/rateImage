@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center">Rate your favourite photo</h1>
+
+<p class="lead text-center mt-3 mb-3">Click on a photo to rate it</p>
+<div class="card-deck text-center mt-3 mb-3">
+    {% for i in object_list %}
+    <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <img id="{{ i.id }}" class="main-img" src="{{ i.url }}" height="150">
+        </div>
+        <div class="card-body">
+        <p>Number of votes: <span id="n{{ i.id }}">{{ i.score_number }}</span></p>
+        <P>Rating: <span id="r{{ i.id }}">{{ i.get_rating }}</span></P>
+                 
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+</div>
+{% include 'modal.html' %}
+<script src="{% static 'js/main.js' %}"></script>
+
+{% endblock content %}
