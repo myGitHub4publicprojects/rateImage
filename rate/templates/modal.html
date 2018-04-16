@@ -4,7 +4,7 @@
         <span id="closeBtn">&times;</span>
         <img id="modalImg" src="">
         <footer id="modal-footer">
-        <form id='rateForm' class="text-center" action="http://{{ request.META.HTTP_HOST }}{% url 'home' %}">
+        <form id='rateForm' class="text-center" action="https://{{ request.META.HTTP_HOST }}{% url 'home' %}">
             {% csrf_token %}
             Rate image:
             <input id="imgRate" type="number" step="1" min="1" max="5">
