@@ -54,7 +54,9 @@
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.setRequestHeader("X-CSRFToken", document.getElementsByName('csrfmiddlewaretoken')[0].value);
         xhr.send('rating=' + imgRate.value);
-
+        xhr.onerror = function(){
+            console.log('I see error');
+        }
 
         // reset currentImg for the next use of the function
         currentImg = '';
